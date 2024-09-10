@@ -13,7 +13,10 @@
         <!-- Header -->
         <header >
             <a href="/" class="logo">Wedding</a>
-            <a href="#" class="menu"><ion-icon name="menu-outline"></ion-icon></a>
+            <a href="#" class="menu" onclick="toggleMenu();">
+                <ion-icon class="open" name="menu-outline"></ion-icon>
+                <ion-icon class="close" name="close-outline"></ion-icon>
+            </a>
             <ul class="nav">
                 <li><a class="nav-btn active" href="/" onclick="resetHeader();"><ion-icon name="home-outline"></ion-icon></a></li>
                 <li><a class="nav-btn" href="#" data-target="about">About</a></li>
@@ -27,6 +30,25 @@
             </div>
         </header>
         <!-- Navegacion movil -->
+        <ul class="nav-mobile">
+            <li>
+                <a href="/" class="nav-btn active" onclick="resetHeader()">
+                    <ion-icon name="home-outline"></ion-icon>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-btn" data-target="about">About</a>
+            </li>
+            <li>
+                <a href="#" class="nav-btn" data-target="services">Services</a>
+            </li>
+            <li>
+                <a href="#" class="nav-btn" data-target="portfolio">Portafolio</a>
+            </li>
+            <li>
+                <a href="#" class="nav-btn" data-target="contact">Contacto</a>
+            </li>
+        </ul>
 
         <!-- Banner -->
         <div class="banner container-fluid">

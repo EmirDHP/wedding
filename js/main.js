@@ -70,3 +70,20 @@ const initNavigation = () => {
     });
     sectionNavigator('about');
 };
+
+//toggle menu
+const toggleMenu = () => {
+    const nav = document.querySelector('header .nav');
+    const menuIcons = document.querySelector('.menu');
+    
+    // Alternar clases para mostrar u ocultar el menú móvil
+    nav.classList.toggle('active');
+    menuIcons.classList.toggle('active');
+    
+    // Cambiar la visibilidad del menú principal del header
+    if (nav.classList.contains('active')) {
+        document.body.style.overflow = 'hidden'; // Desactivar scroll cuando el menú está activo
+    } else {
+        document.body.style.overflow = 'auto';
+    }
+};

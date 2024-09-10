@@ -60,6 +60,23 @@ header.active {
     transition: 0.5s;
 }
 
+/* Menu Mobile*/
+.menu .open {
+    display: block;
+}
+
+.menu .close {
+    display: none;
+}
+
+.menu.active .open {
+    display: none;
+}
+
+.menu.active .close {
+    display: block;
+}
+
 .nav {
     display: flex;
 }
@@ -127,7 +144,55 @@ header.active {
 /*---------------------------------------------------------------
 # Navegacion Movil
 ----------------------------------------------------------------*/
+.nav-mobile {
+    display: none;
+}
 
+.nav-mobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #ffffff;
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    z-index: 1200;
+    gap: 20px;
+    margin: 0 !important;
+    padding:  0 !important;
+}
+
+.nav-mobile.active {
+    opacity: 1;
+    visibility:visible;
+}
+
+.nav-mobile li {
+    position: relative;
+    list-style: none;
+}
+
+.nav-mobile li a {
+    color: #111111;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-weight: 300;
+    padding: 10px;
+}
+
+.nav-mobile li a:hover {
+    color: var(--primary);
+}
 
 /*---------------------------------------------------------------
 # Banner
@@ -830,4 +895,149 @@ section p {
 # Diseño responsivo
 ----------------------------------------------------------------*/
 
+    @media (max-width: 768px) {
+        header .nav {
+            display: none;
+            opacity: 0;
+            transform: translateY(-40px); /* Mayor desplazamiento inicial para hacer más notable el movimiento */
+            transition: opacity 1s ease, transform 1s ease; /* Aumentar la duración de la transición a 1s */
+        }
+    
+        header .nav.active {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+        }
+    
+        /* Ocultar el menú en su estado normal y mostrar solo al activar el menú móvil */
+        .menu {
+            display: block;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .menu ion-icon {
+            transition: opacity 1s, transform 1s ease; /* Transición en la opacidad y transformación */
+        }
+    
+        /* Ajustes cuando el menú móvil está activo */
+        .menu.active .open {
+            display: none;
+        }
+    
+        .menu.active .close {
+            display: block;
+        }
+    
+        .menu .close {
+            display: none;
+        }
+    
+        /* Ocultar barra de búsqueda en pantallas pequeñas */
+        .search {
+            display: none;
+        }
+    
+    .banner {
+        padding: 120px 30px;
+    }
+
+    .bg-slide .content {
+        width: 80vw;
+    }
+
+    .bg-slide .content h1 {
+        font-size: 3em;
+    }
+
+    .bg-slide .content p {
+        font-size: 0.8em;
+    }
+
+    .circle.bg {
+        width: 140vh;
+        height: 140vh;
+    }
+
+    .circle.large {
+        width: 70vh;
+        height: 70vh;
+    }
+
+    .circle.small {
+        width: 35vh;
+        height: 35vh;
+    }
+
+    .bg-slide.active .circle.bg {
+        transform: translate(0, 0) rotateZ(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .bg-slide.active .circle.large {
+        transform: translate(0, 0) rotateZ(360deg);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .bg-slide.active .circle.small {
+        transform: translate(0, 0) rotateZ(-720deg);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .lead {
+        bottom: 100px;
+        width: 150px;
+        height: 150px;
+    }
+
+    .move-down ion-icon {
+        font-size: 2em;
+    }
+
+    .slide-loader {
+        bottom: 20px;
+    }
+
+    .share {
+        left: 5px;
+    }
+
+    section.section-show {
+        padding: 150px 30px 100px;
+    }
+
+    .about .img-box img {
+        max-width: 80vw;
+    }
+
+    .about .img-box .corner-img {
+        width: 25vw;
+        right: -20px;
+    }
+
+    .about h4 {
+        margin-top: 50px;
+    }
+
+    .section-bg-img {
+        bottom: -500px;
+        right: 0px;
+    }
+    
+}
 
